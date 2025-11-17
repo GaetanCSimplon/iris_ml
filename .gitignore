@@ -214,3 +214,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# Notebook
+backend/iris_test.ipynb
+
+# Fichiers et dossiers MLflow (logs d'expérimentation)
+mlruns/
+mlflow.db
