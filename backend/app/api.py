@@ -70,8 +70,10 @@ def predict(features: IrisFeatures):
         ]
         # Prédiction
         prediction_array = model.predict(input_data)
+        logger.info(f"Classe prédite : {prediction_array}")
         # Extraction du résultat
         prediction_value = int(prediction_array[0])
+        logger.info(f"Valeur extraite : {prediction_value}")
         # Nom de la classe
         class_names = ["setosa", "versicolor", "virginica"]
         prediction_class = class_names[prediction_value]
