@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, f1_score
 import mlflow
-import joblib 
+import joblib
 import os
 
 # 1. Obtenir le chemin absolu du dossier où se trouve ce script (backend/ml)
@@ -48,22 +48,21 @@ params = {
 mlflow.sklearn.autolog()
 
 with mlflow.start_run():
-    
     # Train model
     lr = LogisticRegression(**params)
     lr.fit(X_train, y_train)
-    
+
     # Prédiction et scores
     y_pred = lr.predict(X_test)
-    
+
     # Correction de l'erreur F1-score
     accuracy = accuracy_score(y_test, y_pred)
-    f1 = f1_score(y_test, y_pred, average='macro')
-    
+    f1 = f1_score(y_test, y_pred, average="macro")
+
     print(f"Accuracy : {accuracy}")
     print(f"F1-score (macro) : {f1}")
-    
+
     # --- SAUVEGARDE DU MODÈLE (Simple et Robuste) ---
-  
+
     joblib.dump(lr, MODEL_PATH)
     print(f"Modèle de production sauvegardé dans : {MODEL_PATH}")
