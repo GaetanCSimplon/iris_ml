@@ -7,7 +7,6 @@ import mlflow
 import joblib 
 import os
 
-
 # 1. Obtenir le chemin absolu du dossier où se trouve ce script (backend/ml)
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
