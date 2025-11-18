@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - deploy_local
+      - main
 
 env:
   DOCKER_IMAGE_BACKEND: ${{ secrets.DOCKER_USERNAME }}/iris-backend
