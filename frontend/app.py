@@ -1,8 +1,11 @@
 import streamlit as st 
 import requests
+import os
 
 # Adresse locale de l'API - Route POST /predict
-API_URL = "http://127.0.0.1:8000/predict"
+## URL dynamique
+BACKEND_HOST = os.environ.get("BACKEND_URL", "http://127.0.0.1:8000")
+API_URL = f"{BACKEND_HOST}/predict"
 
 st.set_page_config(page_title="Iris ML", layout="wide")
 

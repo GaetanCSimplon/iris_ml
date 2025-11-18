@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  # Service Backend
+  backend:
+    build: ./backend
+    container_name: mon-backend-container
+    ports:
+      - "8000:8000" 
+
+  # Service Frontend
+  frontend:
+    build: ./frontend
+    container_name: mon-frontend-container
+    ports:
+      - "8501:8501"
+    environment:
+      - BACKEND_URL=http://backend:8000
+    depends_on:
+      - backend
+
