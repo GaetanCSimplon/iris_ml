@@ -1,1 +1,23 @@
-site_name: My Docs
+site_name: IRIS ML
+site_url: https://GaetanCSimplon.github.io/iris_ml/ 
+repo_url: https://github.com/GaetanCSimplon/iris_ml/actions
+repo_name: Iris ML 
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+
+  nav:
+    - Accueil: index.md
+    - Architecture: architecture.md
+    - API: api.md
+
+markdown_extensions: 
+  - pymdownx.superfences:
+    custom_fences:
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:pymdownx.superfences.fence_code_format

@@ -1,17 +1,12 @@
-# Welcome to MkDocs
+# Bienvenue sur le projet Iris ML
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Ce projet est une démonstration complète d'un pipeline MLOps, incluant l'entraînement d'un modèle, son exposition via une API et une interface utilisateur.
 
-## Commands
+## Fonctionnalités
+* **Machine Learning** : Classification de fleurs Iris avec Scikit-Learn et MLflow.
+* **Backend** : API REST performante avec FastAPI.
+* **Frontend** : Interface interactive avec Streamlit.
+* **DevOps** : Conteneurisation Docker et CI/CD avec GitHub Actions.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Démarrage rapide
+`docker-compose up --build`
