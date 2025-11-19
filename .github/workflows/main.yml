@@ -33,7 +33,7 @@ jobs:
         run: pip install mkdocs mkdocs-material
       
       - name: Déployer la doc
-        run: mkdocs gh_deploy --force
+        run: mkdocs gh-deploy --force
 
       - name: Lancer les tests (Pytest)
         run: |

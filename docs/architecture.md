@@ -2,7 +2,7 @@
 
 
 ```text
-iris-project/
+iris-ml/
 ├── .github/
 │   └── workflows/
 │       └── main.yml         # Pipeline CI/CD (GitHub Actions)
