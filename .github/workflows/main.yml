@@ -28,6 +28,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r backend/requirements.txt
           pip install pytest httpx
+      
+      - name: Installer MKDocs
+        run: pip install mkdocs mkdocs-material
+      
+      - name: Déployer la doc
+        run: mkdocs gh_deploy --force
 
       - name: Lancer les tests (Pytest)
         run: |
