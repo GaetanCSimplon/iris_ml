@@ -43,6 +43,36 @@ iris-ml/
 └── .gitignore               # Fichiers ignorés par Git (.venv, secrets...)
 ```
 
+## Diagramme de séquence
+
+```mermaid
+sequenceDiagram
+    actor User as "Utilisateur"
+    participant Front as "Frontend Streamlit"
+    participant Back as "Backend FastAPI"
+    participant Model as "Modèle ML pkl"
+
+    User->>Front: Accès à l’interface web
+    activate Front
+    Front->>User: Affiche le formulaire Iris
+
+    User->>Front: Saisie des mesures et clic sur Prédire
+    Front->>Back: POST /predict (JSON)
+    activate Back
+
+    Back->>Model: Chargement et exécution du modèle
+    activate Model
+    Model-->>Back: Classe prédite
+    deactivate Model
+
+    Back-->>Front: Réponse HTTP 200 (JSON)
+    deactivate Back
+
+    Front->>User: Affiche le résultat
+    deactivate Front
+
+```
+
 ## Installation
 
 Prérequis: Docker Desktop et Git
