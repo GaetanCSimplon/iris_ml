@@ -56,7 +56,7 @@ cd iris_ml
 
 - Méthode make
 
-```basg
+```bash
 make run
 ```
 
