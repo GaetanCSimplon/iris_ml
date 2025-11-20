@@ -145,7 +145,7 @@ Une fois lancé, ouvrez votre navigateur :
 
 https://gaetancsimplon.github.io/iris_ml/
 
-## Bonus : Azure ML Tracking
+## Bonus : Azure ML Tracking (branche ml_azure_tracking)
 
 Le tracking des expériences est configuré pour fonctionner avec **Azure Machine Learning**.
 
