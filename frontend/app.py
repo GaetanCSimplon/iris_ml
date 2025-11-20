@@ -37,7 +37,7 @@ if submitted:
     }
     
     st.write("Envoi des données à l'API...")
-    
+    st.error(f"Afficher API_URL {API_URL}")
     try:
         response = requests.post(API_URL, json=iris_data)
         
