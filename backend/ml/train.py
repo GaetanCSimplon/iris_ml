@@ -25,6 +25,16 @@ os.makedirs(MODEL_DIR, exist_ok=True)
 MODEL_PATH = os.path.join(MODEL_DIR, "model.pkl")
 # --- Fin de la gestion des chemins ---
 
+# --- Configuration Local/Azure pour Tracking MLflow ---
+
+remote_server_uri = os.environ.get("MLFLOW_TRACKING_URI")
+
+if remote_server_uri:
+    mlflow.set_tracking_uri(remote_server_uri)
+    print(f"Tracking activé sur Azure ML : {remote_server_uri}.")
+else:
+    print("Tracking local.")
+
 
 # Création de l'expériment
 mlflow.set_experiment("Iris ML")
