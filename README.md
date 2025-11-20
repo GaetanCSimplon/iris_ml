@@ -155,6 +155,8 @@ En raison des restrictions de permissions sur le compte étudiant (droits Active
 
 Cependant, le tracking fonctionne parfaitement en **lancement local authentifié** (`az login`), permettant de centraliser les logs d'expérience sur le cloud Azure.
 
+[Lien Azure ML - Iris ML](https://ml.azure.com/?wsid=/subscriptions/fbf86e5f-ad89-41dd-bcc2-4fb5e64140b0/resourceGroups/gcourtieuRG/providers/Microsoft.MachineLearningServices/workspaces/Iris-ML&tid=a2e466aa-4f86-4545-b5b8-97da7c8febf3)
+
 **Fonctionnement**
 
 ```mermaid
