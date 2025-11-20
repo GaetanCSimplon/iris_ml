@@ -106,4 +106,14 @@ Une fois lancé, ouvrez votre navigateur :
 
 https://gaetancsimplon.github.io/iris_ml/
 
+## Bonus : Azure ML Tracking
+
+Le tracking des expériences est configuré pour fonctionner avec **Azure Machine Learning**.
+
+**Note technique :**
+L'automatisation complète de l'entraînement via GitHub Actions nécessiterait la création d'un *Service Principal* Azure.
+En raison des restrictions de permissions sur le compte étudiant (droits Active Directory limités), cette étape n'a pas pu être implémentée dans le CI/CD.
+
+Cependant, le tracking fonctionne parfaitement en **lancement local authentifié** (`az login`), permettant de centraliser les logs d'expérience sur le cloud Azure.
+
 
