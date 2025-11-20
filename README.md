@@ -73,6 +73,40 @@ sequenceDiagram
 
 ```
 
+## Interactions
+
+```mermaid
+flowchart TD
+    classDef script fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef file fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,stroke-dasharray:5 5
+    classDef http fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+
+    subgraph Machine_Learning["Phase 1 : Entrainement"]
+        TrainScript["backend/ml/train.py"]:::script
+    end
+
+    subgraph Stockage["Phase 2 : Persistance"]
+        ModelPKL["backend/model/model.pkl"]:::file
+    end
+
+    subgraph Execution["Phase 3 : Runtime Docker"]
+        direction TB
+        API["backend/app/api.py"]:::script
+        UI["frontend/app.py"]:::script
+        User(("Utilisateur"))
+    end
+
+    TrainScript -->|"1. Genere et sauvegarde"| ModelPKL
+    ModelPKL -.->|"2. Charge au demarrage"| API
+
+    User -->|"3. Interagit avec"| UI
+    UI -->|"4. Envoie requete HTTP JSON"| API
+    API -->|"5. Utilise le modele pour predire"| ModelPKL
+    API -->|"Reponse JSON"| UI
+
+
+```
+
 ## Installation
 
 Prérequis: Docker Desktop et Git
@@ -116,4 +150,34 @@ En raison des restrictions de permissions sur le compte étudiant (droits Active
 
 Cependant, le tracking fonctionne parfaitement en **lancement local authentifié** (`az login`), permettant de centraliser les logs d'expérience sur le cloud Azure.
 
+**Fonctionnement**
+
+```mermaid
+flowchart TD
+    subgraph VS_Code["Votre Ordinateur WSL"]
+        Script["Script train.py"]
+        EnvVar["Variable : MLFLOW_TRACKING_URI"]
+        Auth["Session : az login - votre compte"]
+    end
+
+    subgraph Azure_Cloud["Microsoft Azure"]
+        AzureML["Azure Machine Learning"]
+        Metrics["Graphiques et Logs"]
+        Artifacts["Modele .pkl"]
+    end
+
+    Script -->|1. Verifie| EnvVar
+    EnvVar -->|"Existe ?"| OUI
+    OUI{"Oui"} -->|2. Utilise| Auth
+    Auth -->|3. Envoie donnees via internet| AzureML
+
+    AzureML --> Metrics
+    AzureML --> Artifacts
+
+    classDef azure fill:#007fff,stroke:#fff,color:#fff,stroke-width:2px
+    class AzureML,Metrics,Artifacts azure
+
+
+
+```
 
