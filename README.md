@@ -1,13 +1,18 @@
-# Iris MLOps
+# Iris ML - Pipeline CI/CD
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?logo=fastapi)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)
+![Azure](https://img.shields.io/badge/Microsoft_Azure-0078D4?logo=microsoft-azure&logoColor=white)
 
 ##  Objectif
 Ce projet est une démonstration **MLOps** complète.
 Il permet de prédire l'espèce d'une fleur d'Iris via une interface web, en utilisant un modèle de Machine Learning conteneurisé et déployé automatiquement via un pipeline CI/CD.
+
+## Version déployée (Microsoft Azure)
+
+[Iris ML](https://iris-ml-front-f8djewduezbehwe3.francecentral-01.azurewebsites.net/)
 
 ## Architecture
 Le projet fonctionne en **micro-services** orchestrés par Docker :
